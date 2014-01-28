@@ -39,7 +39,7 @@ public class SingleClientFrame extends JPanel {
         sendButton = new JButton("p"+id+" send");
         connectButton = new JButton("p"+id+" connect");
         disconnectButton = new JButton("p"+id+" disconnect");
-        messageAreas = new JTextArea(30, 20);
+        messageAreas = new JTextArea(10, 20);
         sendArea = new JTextArea(8, 20);
         selectSendMessage = new JComboBox();
 
