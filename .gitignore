@@ -3,3 +3,4 @@
 *.iwr
 *.iws
 *.class
+out/*

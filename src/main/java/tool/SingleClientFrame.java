@@ -36,11 +36,11 @@ public class SingleClientFrame extends JPanel {
         initMessageTemplateMap();
         setLayout(new FlowLayout());
 
-        sendButton = new JButton("p"+id+" send");
-        connectButton = new JButton("p"+id+" connect");
-        disconnectButton = new JButton("p"+id+" disconnect");
-        messageAreas = new JTextArea(10, 20);
-        sendArea = new JTextArea(8, 20);
+        sendButton = new JButton("p"+id+" 发送");
+        connectButton = new JButton("p"+id+" 链接");
+        disconnectButton = new JButton("p"+id+" 断开");
+        messageAreas = new JTextArea(28, 17);
+        sendArea = new JTextArea(13, 17);
         selectSendMessage = new JComboBox();
 
         sendButton.addActionListener(new SendMessageButtonListener());
