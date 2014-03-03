@@ -62,16 +62,17 @@ public class SingleClientFrame extends JPanel {
         add( sendButton);
         add(receiveButton);
         add(selectSendMessage);
+
     }
 
     class ReceiveButtonListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            try {
-                messageAreas.append(clients.readMsg());
-            } catch (IOException e1) {
-                e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            }
+//            try {
+//                messageAreas.append(clients.readMsg());
+//            } catch (IOException e1) {
+//                e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//            }
         }
     }
 
@@ -80,6 +81,8 @@ public class SingleClientFrame extends JPanel {
             try {
                 clients = new SimpleSocketClient("127.0.0.1", 4321);
                 messageAreas.append(clients.readMsg());
+                SocketReceiveThread thread = new SocketReceiveThread(clients, messageAreas, id);
+                thread.start();
             } catch (IOException e1) {
                 e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
